@@ -1,0 +1,18 @@
+
+Set-ExecutionPolicy Unrestricted -Scope Process
+& d:/TUTORIAL/PYTHON/ArisIMDB/venv/Scripts/Activate.ps1
+
+- Membuat admin 'core'
+        - `django-admin startproject core .`
+    - Membuat app `'blog'`
+        - `python manage.py startapp blog`
+    - Membuat app `'blog_api'`
+        - `python manage.py startapp blog_api`
+    - Migrate  `python manage.py migrate`
+
+python manage.py runserver
+python manage.py makemigrations
+python manage.py makemigrations --dry-run --verbosity 3
+python manage.py migrate
+coverage run --omit='*venv*' manage.py test
+coverage html
